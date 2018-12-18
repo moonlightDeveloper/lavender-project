@@ -1,8 +1,8 @@
 import React from 'react';
 import {Route, Switch} from 'react-router';
 //import App from '../App';
-import Home from '../components/home';
-import Contact from '../components/contact';
+import Home from '../components/pages/Home';
+import Contact from '../components/pages/Contact';
 
 
 // export default (

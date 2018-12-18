@@ -15,12 +15,7 @@ if (process.env.NODE_ENV === 'production') {
 
 MongoClient
     .connect(url, {
-        useNewUrlParser: true, poolSize: 10, server: {
-            // sets how many times to try reconnecting
-            reconnectTries: Number.MAX_VALUE,
-            // sets the delay between every retry (milliseconds)
-            reconnectInterval: 1000
-        }
+        useNewUrlParser: true, poolSize: 10
     })
     .then(client => {
         db = client.db('lavender-DB');

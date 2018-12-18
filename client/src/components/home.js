@@ -4,7 +4,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div id="billie-container" className="billie-container-height">
+      <div id="home" className="main">
         {/*<NavigationBar />*/}
         This is Home!
       </div>

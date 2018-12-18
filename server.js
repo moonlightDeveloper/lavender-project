@@ -1,6 +1,4 @@
 const express = require('express');
-const fs = require('fs');
-
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017/lavender-DB';
@@ -15,9 +13,15 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 }
 
-
 MongoClient
-    .connect(url, {useNewUrlParser: true, poolSize: 10})
+    .connect(url, {
+        useNewUrlParser: true, poolSize: 10, server: {
+            // sets how many times to try reconnecting
+            reconnectTries: Number.MAX_VALUE,
+            // sets the delay between every retry (milliseconds)
+            reconnectInterval: 1000
+        }
+    })
     .then(client => {
         db = client.db('lavender-DB');
         collection = db.collection('lavender-collection');
@@ -35,28 +39,6 @@ app.get('/api', (req, res) => {
             .json(response))
         .catch(error => console.error(error));
 });
-
-// app.get('/api', (req, res) => {
-//     MongoClient.connect(url, {
-//         server: {
-//             // sets how many times to try reconnecting
-//             reconnectTries: Number.MAX_VALUE,
-//             // sets the delay between every retry (milliseconds)
-//             reconnectInterval: 1000
-//         },
-//         useNewUrlParser: true
-//     },).then(db => {
-//         collection = db.collection('lavender-collection')
-//             .find({})
-//             .limit(5)
-//             .toArray()
-//             .then((data) => {
-//                 res.json(data);
-//             });
-//     }).catch(err => {
-//         console.log(err);
-//     });
-// });
 
 
 app.listen(app.get('port'));

@@ -1,26 +1,31 @@
 import React from 'react';
-import DB from './DB';
+// import DB from './DB';
+import Header from './components/Header';
+import Main from './components/Main';
 
 class App extends React.Component {
-  state = {items: []};
+    state = {items: []};
 
-  componentDidMount() {
-    const search_value = 'your-search-terms-here';
-    DB.search(search_value, (items) => {
-      this.setState({items: items});
-    });
-  }
+    // componentDidMount() {
+    //     const search_value = 'magdalena';
+    //     DB.search(search_value, (items) => {
+    //         this.setState({items: items});
+    //     });
+    // }
 
-  render() {
-    const items = this.state.items.map(
-      (item, i) => (<h1 key={i}>{item.name}</h1>)
-    );
-    return (
-      <div>
-        {items}
-      </div>
-    );
-  }
+    render() {
+        // const items = this.state.items.map(
+        //     (item, i) => (<h1 key={i}>{item.contact}</h1>)
+        // );
+        return (
+            <div>
+                <div className="main">
+                    <Header/>
+                    <Main/>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;

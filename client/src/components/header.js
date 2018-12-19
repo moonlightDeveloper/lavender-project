@@ -11,7 +11,7 @@ const Header = () => (
                     <i className="fa fa-bars"></i>
                 </button>
                 <a className="navbar-brand"><h1><span
-                    className="pe-7s-gleam bounce-in"></span> IMPACT</h1></a>
+                    className="pe-7s-gleam bounce-in"></span>EMONA</h1></a>
             </div>
             <nav className="collapse navbar-collapse">
                 <ul className="nav navbar-nav navbar-right">

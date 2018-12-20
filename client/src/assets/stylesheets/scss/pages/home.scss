@@ -85,6 +85,11 @@
 
 .stat-icon {
   font-size: 44px;
+
+}
+
+.center {
+  text-align: center;
 }
 
 #stats {
@@ -99,6 +104,7 @@
     text-transform: uppercase;
   }
 }
+
 .divider-section {
   background-color: rgba(0, 0, 0, 0.8);
   position: relative;
@@ -110,6 +116,23 @@
 .divider-section a {
   color: #f5f5f5;
 }
+
+.production-img {
+  height: 17em;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

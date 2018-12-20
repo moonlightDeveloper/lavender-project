@@ -8,6 +8,9 @@ body {
   font-size: 16px;
   display: block;
 }
+.main{
+  overflow-x: hidden;
+}
 
 @import 'components/colors';
 @import 'components/slider';

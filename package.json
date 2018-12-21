@@ -16,6 +16,7 @@
   "scripts": {
     "sass": "sass --watch client/src/assets/stylesheets/scss:client/src/assets/stylesheets/css",
     "start": "concurrently \"npm run server\" \"cd client && npm start\" \"npm run sass\"",
+
     "server": "babel-watch server.js",
     "dev": "echo \"This command has been deprecated. Use 'npm start'\" && exit 1",
     "lint": "eslint ."

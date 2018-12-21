@@ -200,3 +200,15 @@
   font-size: 30px;
   margin-top: 4px;
 }
+
+@media (max-width: 1000px) {
+  #main-slider {
+    min-height: 30em;
+    .carousel {
+      .boxed {
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.65);
+      }
+    }
+  }
+}

@@ -1,26 +1,33 @@
-$asset-base-path: '../../../images' !default;
-@function asset($type, $file) {
-  @return url($asset-base-path + '/' + $file);
-}
-@function image($file) {
-  @return asset('images', $file);
-}
-@function font($file) {
-  @return asset('fonts', $file);
-}
+@import './colors';
+
 
 /*  Slider */
 
 #main-slider {
-
-  //background-image: url('../../../images/lavender-back.jpg');
+ //background: greenyellow url("../../../images/lavender-back.jpg");
   position: relative;
   z-index: 5;
-  color: #fff;
+  color: $black;
+  max-height: 50em;
   .carousel-inner {
+    .carousel-content{
+      margin-top: 100px;
+
+      h2.header-title{
+        @media (max-width:365px) {
+          font-size: 2em;
+        }
+      }
+    }
+    img {
+      padding-top: 3em;
+      width: 100%;
+    }
     overflow: visible;
   }
 }
+
+
 
 .backstretch:before {
   content: '';
@@ -33,17 +40,17 @@ $asset-base-path: '../../../images' !default;
 }
 
 #main-slider .carousel {
+
   h2 {
     font-size: 44px;
-    color: #fff;
-    text-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px;
+    color: $black;
     text-transform: uppercase;
     letter-spacing: -1px;
     margin-top: 30px;
   }
   .btn {
-    border: 5px solid rgba(255, 255, 255, 0.9);
-    color: #fff;
+    border: 5px solid $black;
+    color: $black;
     border-radius: 0;
     margin-top: 35px;
     font-size: 26px;
@@ -51,12 +58,16 @@ $asset-base-path: '../../../images' !default;
     text-transform: uppercase;
     padding: 10px 15px;
     text-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px;
-    z-index: 10px;
+    z-index: 10;
     &:hover {
       background-color: rgba(255, 255, 255, 0.9);
       color: #202020;
     }
+    @media(max-width: 1000px){
+      margin-top: 0;
+    }
   }
+
   .boxed {
     padding: 10px 15px;
     background-color: rgba(0, 0, 0, 0.2);

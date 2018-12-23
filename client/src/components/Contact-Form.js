@@ -22,6 +22,11 @@ class ContactForm extends Component {
                         <div className='back'>
                             <button onClick={() => this.toggleForm()} className="btn btn-white flip">CONTACT US
                             </button>
+                            <div className="container contacts">
+                                <div className="col-xs-12 col-sm-6">
+                                    Mail: mefme.wegber.
+                                </div>
+                            </div>
                         </div>
                         <div className="front">
                             <button onClick={() => this.toggleForm()} className="flip close">X</button>

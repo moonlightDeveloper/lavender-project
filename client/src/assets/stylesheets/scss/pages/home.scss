@@ -151,7 +151,6 @@ section {
 }
 
 .team-image span {
-  color: #e8e8e8;
   display: inline-block;
   font-size: 1.1em;
   height: 3.5em;
@@ -189,8 +188,13 @@ section {
 }
 
 .family-section {
-  background-color: $black;
+  background-color: white;
+  color: $black;
+  padding-bottom: 3em;
+}
+.contacts{
   color: white;
+  font-weight: 100;
 }
 
 

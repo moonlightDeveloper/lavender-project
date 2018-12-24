@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import ContactForm from './Contact-Form';
+import FamilyContent from "./Family-Content";
 
 class Home extends Component {
 
@@ -13,7 +15,8 @@ class Home extends Component {
                                 <div className="container main-container">
                                     <div className="col-sm-12">
                                         <div className="carousel-content centered">
-                                            <h2 className="boxed animation animated-item-1 fade-down header-title">LAVENDER OIL -
+                                            <h2 className="boxed animation animated-item-1 fade-down header-title">LAVENDER
+                                                OIL -
                                                 PRODUCTION</h2>
                                             <br/>
                                             <h3 className="boxed animation animated-item-2 fade-up"> The Gold Of
@@ -64,9 +67,7 @@ class Home extends Component {
                                     </div>
                                 </div>
                             </div>
-
                             <div className="gap"></div>
-
                         </div>
                     </section>
 
@@ -75,48 +76,48 @@ class Home extends Component {
                             <div className="gap"></div>
                             <div className=" gap fade-down section-heading">
                                 <h2 className="main-title">The Process</h2>
+                                <h4>Great ideas always have a beginning</h4>
                                 <hr/>
-                                <p>Great ideas always have a beginning</p>
                             </div>
-                            <div className="row">
-                                <div className="col-md-6 col-xs-12">
-                                    <div className="production-img"
-                                         style={{backgroundImage: "url(/production-11.jpg"}}/>
-                                    <div className="team-content fade-up">
-                                        <h5>
-                                            Best sowed seeds
-
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div className="col-md-6 col-xs-12">
-                                    <div className="production-img"
-                                         style={{backgroundImage: "url(/production-22.jpg)"}}/>
-                                    <div className="team-content fade-up">
-                                        <h5>
-                                           Manual work guaranties quality
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div className="col-md-6 col-xs-12">
-                                    <div className="team-member">
+                            <div className="img-production-container">
+                                <div className="col-sm-6 col-xs-12 col-md-3">
+                                    <div className="img-prod"><h5>
+                                        Best sowed seeds
+                                    </h5>
                                         <div className="production-img"
-                                             style={{backgroundImage: "url(/production-33.jpeg)"}}/>
-
-                                        <div className="team-content fade-up">
-                                            <h5>
-                                               Oil extraction under strictly controlled conditions
-                                            </h5>
+                                             style={{backgroundImage: "url(/production-11.jpg"}}>
+                                            <div className="img-transperant"></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-md-6 col-xs-12">
-                                    <div className="team-member">
+                                <div className="col-sm-6 col-xs-12 col-md-3">
+                                    <div className="img-prod"><h5>
+                                        Manual work guaranties quality
+                                    </h5>
                                         <div className="production-img"
-                                             style={{backgroundImage: "url(/production-44.jpg)"}}/>
-
-                                        <div className="team-content fade-up">
-                                            <h5>Lavender oil is stored and ready to use. </h5>
+                                             style={{backgroundImage: "url(/production-22.jpg"}}>
+                                            <div className="img-transperant"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-sm-6 col-xs-12 col-md-3">
+                                    <div className="img-prod"><h5>
+                                        Oil extraction under strictly controlled conditions
+                                    </h5>
+                                        <div className="production-img"
+                                             style={{backgroundImage: "url(/production-33.jpeg"}}>
+                                            <div className="img-transperant"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-sm-6 col-xs-12 col-md-3">
+                                    <div className="img-prod"><h5>
+                                        Lavender oil is stored and ready to
+                                        use.
+                                    </h5>
+                                        <div className="production-img"
+                                             style={{backgroundImage: "url(/production-44.jpg"}}>
+                                            <div className="img-transperant"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -161,67 +162,9 @@ class Home extends Component {
                         </div>
                         <div className="gap"></div>
                     </section>
+                    <FamilyContent/>
 
-                    <section>
-                        <div className="container">
-                            <div className="gap"></div>
-                            <div className="gap fade-down section-heading">
-                                <h2 className="main-title">Meet Our Family</h2>
-                                <hr/>
-                                <p>Of an or game gate west face shed. ﻿no great but music too old found arose.</p>
-                            </div>
-                            <div id="meet-the-team" className="row">
-                                <div className="col-md-3 col-xs-6">
-                                    <div className="center team-member">
-                                        <div className="team-image">
-                                            <img className="img-responsive img-thumbnail bounce-in"
-                                                 src="images/team/team01.jpg" alt=""/>
-                                            <div className="overlay">
-                                                <a className="preview btn btn-outlined btn-primary"
-                                                   href="images/team/team01.jpg" rel="prettyPhoto"><i
-                                                    className="fa fa-eye"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="col-md-3 col-xs-6">
-                                    <div className="center team-member">
-                                        <div className="team-image">
-                                            <img className="img-responsive img-thumbnail bounce-in"
-                                                 src="images/team/team02.jpg" alt=""/>
-                                            <div className="overlay">
-                                                <a className="preview btn btn-outlined btn-primary"
-                                                   href="images/team/team02.jpg" rel="prettyPhoto"><i
-                                                    className="fa fa-eye"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-md-3 col-xs-6">
-                                    <div className="center team-member">
-                                        <div className="team-image">
-                                            <img className="img-responsive img-thumbnail bounce-in"
-                                                 src="images/team/team03.jpg" alt=""/>
-                                            <div className="overlay">
-                                                <a className="preview btn btn-outlined btn-primary"
-                                                   href="images/team/team03.jpg" rel="prettyPhoto"><i
-                                                    className="fa fa-eye"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-md-3 col-xs-6">
-                                    <div className="center team-member">
-                                        <div className="team-image">
-                                            <img className="img-responsive img-thumbnail bounce-in"
-                                                 src="images/team/team04.jpg" alt=""/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    <ContactForm/>
                 </div>
             </div>
         );

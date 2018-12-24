@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from './Home';
-import Contact from './Contact';
+import Contact from './Contacts';
 import {Switch, Route} from 'react-router';
 
 const Main = () => (

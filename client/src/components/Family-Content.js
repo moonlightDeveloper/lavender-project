@@ -46,7 +46,8 @@ class FamilyContent extends Component {
 
     render() {
         return (
-            <section className="family-section" ref={this.familySection}>
+            <section className="family-section" ref={this.familySection} >
+
                 <div className="container">
                     <div className="gap"></div>
                     <div className="gap fade-down section-heading">
@@ -108,6 +109,7 @@ class FamilyContent extends Component {
                         </div>
                     </div>
                 </div>
+                <div className="map" ><div style={{backgroundImage: "url(/mapeurope.png)"}}></div></div>
             </section>
         );
     }

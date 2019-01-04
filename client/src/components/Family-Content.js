@@ -6,9 +6,9 @@ let isTop = false;
 class FamilyContent extends Component {
     constructor() {
         super()
-        // this.state = {
-        //     isTop: true
-        // };
+        this.state = {
+            isTop: true
+        };
     }
 
     componentDidMount() {

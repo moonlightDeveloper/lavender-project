@@ -52,52 +52,6 @@ class ContactForm extends Component {
 
 export default ContactForm;
 
-{/*<div className="cont-contactBtn">*/
-}
-{/*<div className="cont-flip">*/
-}
-{/*<div className={this.state.isFormVisible ? 'back' : 'front'}>*/
-}
-{/*<button onClick={() => this.toggleForm()}>CONTACT US</button>*/
-}
-{/*/!*<a href="#" className="btn btn-white flip">CONTACT US</a>*!/*/
-}
-{/*</div>*/
-}
 
-{/*<div className={this.state.isFormVisible ? 'front' : 'back'}>*/
-}
-{/*<form className="contact-form container " action="">*/
-}
-{/*<div className="col-xs-12 col-sm-6"><input className="gutter" type="text"*/
-}
-{/*placeholder="Name"/>*/
-}
-{/*</div>*/
-}
-{/*<div className="col-xs-12 col-sm-6"><input className="gutter col-xs-12" type="text"*/
-}
-{/*placeholder="Telephone"/></div>*/
-}
-{/*<div className="col-xs-12 col-sm-6"><input type="text" placeholder="Company"/></div>*/
-}
-{/*<div className="col-xs-12 col-sm-6"><input type="text" placeholder="Email"/></div>*/
-}
-{/*<div className="col-xs-12"><textarea name="" id=""*/
-}
-{/*placeholder="Leave a message"></textarea>*/
-}
-{/*</div>*/
-}
-{/*<div className="col-xs-12"><input type="submit" value="Send"/></div>*/
-}
-{/*</form>*/
-}
-{/*</div>*/
-}
-{/*</div>*/
-}
-{/*</div>*/
-}
 
 

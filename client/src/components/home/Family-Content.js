@@ -1,52 +1,22 @@
 import React, {Component} from 'react';
+import AOS from "aos";
+
 
 const RESPONSIVE_CLASS = 'col-sm-6 col-xs-12 col-md-3';
-let lastScrollY = 0;
-let isTop = false;
+
 class FamilyContent extends Component {
-    constructor() {
-        super()
-        this.state = {
-            isTop: true
-        };
-    }
 
     componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll);
+        AOS.init();
     }
 
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
+    componentWillReceiveProps() {
+        AOS.refresh();
     }
-
-    familySection = React.createRef();
-
-
-    handleScroll = () => {
-        lastScrollY = window.scrollY;
-
-        if (!isTop) {
-            window.requestAnimationFrame(() => {
-                this.familySection.current.style.top = `${lastScrollY}px`;
-                isTop = true;
-            });
-
-            isTop = false;
-        }
-    };
-
-    // componentDidMount() {
-    //     document.addEventListener('scroll', () => {
-    //         const isTop = window.scrollY < 2000;
-    //         if (isTop !== this.state.isTop) {
-    //             this.setState({isTop})
-    //         }
-    //     });
-    // }
 
     render() {
         return (
-            <section className="family-section" ref={this.familySection} >
+            <section className="family-section">
 
                 <div className="container">
                     <div className="gap"></div>
@@ -55,52 +25,56 @@ class FamilyContent extends Component {
                         <hr/>
                     </div>
                     <div id="meet-the-team" className="row">
-                        <div className={isTop ? RESPONSIVE_CLASS : RESPONSIVE_CLASS +  ' img-animation'}>
+                        <div className={RESPONSIVE_CLASS + ' img-animation'}>
                             <div className="center team-member">
                                 <div className="team-image">
                                     <div className="front card">
                                         <span>The guy who made it all possible</span>
                                         <div className="production-img"
-                                             style={{backgroundImage: "url(/emil.jpg)"}}>
+                                             style={{backgroundImage: "url(/emil.jpg)"}} data-aos="flip-up"
+                                             data-aos-delay="0" data-aos-duration="1000">
                                         </div>
                                     </div>
                                     <div className="back card"></div>
                                 </div>
                             </div>
                         </div>
-                        <div className={isTop ? RESPONSIVE_CLASS : RESPONSIVE_CLASS +  ' img-animation'}>
+                        <div className={RESPONSIVE_CLASS + ' img-animation'}>
                             <div className="center team-member">
                                 <div className="team-image">
                                     <div className="front card">
                                         <span>The woman who speaks with you</span>
                                         <div className="production-img"
-                                             style={{backgroundImage: "url(/magdalena.jpg)"}}>
+                                             style={{backgroundImage: "url(/magdalena.jpg)"}} data-aos="flip-up"
+                                             data-aos-delay="100" data-aos-duration="1000">
                                         </div>
                                     </div>
                                     <div className="back card"></div>
                                 </div>
                             </div>
                         </div>
-                        <div className={isTop ? RESPONSIVE_CLASS : RESPONSIVE_CLASS +  ' img-animation'}>
+                        <div className={RESPONSIVE_CLASS + ' img-animation'}>
                             <div className="center team-member">
                                 <div className="team-image ">
                                     <div className="front card">
                                         <span> The woman who prepare the documents</span>
                                         <div className="production-img"
-                                             style={{backgroundImage: "url(/nadia.jpg)"}}>
+                                             style={{backgroundImage: "url(/nadia.jpg)"}} data-aos="flip-up"
+                                             data-aos-delay="200" data-aos-duration="1000">
                                         </div>
                                     </div>
                                     <div className="back card"></div>
                                 </div>
                             </div>
                         </div>
-                        <div className={isTop ? RESPONSIVE_CLASS : RESPONSIVE_CLASS +  ' img-animation'}>
+                        <div className={RESPONSIVE_CLASS + ' img-animation'}>
                             <div className="center team-member">
                                 <div className="team-image ">
                                     <div className="front card">
                                         <span>The woman who control the oil production process</span>
                                         <div className="production-img"
-                                             style={{backgroundImage: "url(/emona.jpg)"}}>
+                                             style={{backgroundImage: "url(/emona.jpg)"}} data-aos="flip-up"
+                                             data-aos-delay="300" data-aos-duration="1000">
                                         </div>
                                     </div>
                                     <div className="back card"></div>
@@ -109,7 +83,9 @@ class FamilyContent extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="map" ><div style={{backgroundImage: "url(/mapeurope.png)"}}></div></div>
+                <div className="map">
+                    <div style={{backgroundImage: "url(/mapeurope.png)"}}></div>
+                </div>
             </section>
         );
     }

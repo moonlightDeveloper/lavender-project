@@ -133,8 +133,9 @@ section {
 .img-production-container {
 
   div[class^="col-"] {
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
+
     .img-prod {
       position: relative;
 
@@ -144,11 +145,12 @@ section {
         text-align: center;
         z-index: 24;
         width: 100%;
-        font-size: 1.1em;
-        margin-top: calc(100% - 50px);
-
-        padding: 0.8em;
+        font-size: 1.5em;
+        margin-top: calc(100% - 80px);
+        font-weight: 300;
+        padding: 0.5em;
         color: #fcfcfc;
+        text-shadow: 0px 4px 3px rgb(36, 20, 58), 0px 8px 13px rgb(28, 9, 53), 0px 18px 23px rgb(38, 18, 64);
         display: none;
 
       }
@@ -164,16 +166,32 @@ section {
           line-height: 16;
           color: #f8f8f8;
           text-align: center;
-
+          background: #000;
+          background: -moz-linear-gradient(-45deg, #000000 0%, #000000 25%, #1e539e 50%, #ff3083 75%, #7800a8 100%);
+          background: -webkit-linear-gradient(-45deg, #000000 0%, #000000 25%, #1e539e 50%, #ff3083 75%, #7800a8 100%);
+          background: linear-gradient(135deg, #000000 0%, #000000 25%, #dcd277 50%, #1e0233 75%, #7800a8 100%);
+          background-size: 400% 400%;
+          cursor: pointer;
+          transition: .8s all;
+          mix-blend-mode: screen;
         }
+
       }
 
       &:hover h5 {
         display: block;
       }
+      &:hover .img-gradient {
+        background: #251238d1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        transition: .8s all;
+        position: absolute;
+      }
+
       &:hover .img-transperant {
-       //background: #514167a6;
-        background: #654e2e78;
+        background-position: 100% 100%;
       }
 
     }
@@ -186,10 +204,7 @@ section {
   background-repeat: no-repeat;
   margin-bottom: 2em;
 
-
 }
-
-
 
 .team-image span {
   display: inline-block;

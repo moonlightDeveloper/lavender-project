@@ -1,88 +1,118 @@
-let options = {
-    imgSrc2:"http://platinum-communities.com/wp-content/uploads/2017/11/lavender-1117275_960_720.jpg",
-    imgSrc1:"https://cdn.shopify.com/s/files/1/2493/4696/files/Terre_Bleu_Lavender_Farm_Children_in_Field_2000x.jpg?v=1513896023",
-    containerName : "placeholder",
-    columns:16,
-    margin:3
+import {TweenMax, Power1} from "gsap";
+import {Component} from "react";
+import React from "react";
+
+const defaults = {
+    imgSrc: "http://platinum-communities.com/wp-content/uploads/2017/11/lavender-1117275_960_720.jpg",
+    containerName: "placeholder",
+    rows: 5,
+    columns: 5,
+    margin: 2.5,
+    animTime: 0.3
 }
 
+class ImageGrid extends Component {
 
-function VenetianBlinds(defaults)
-{
-    let cols = defaults.columns;
-    let margin = defaults.margin;
-    let img1 = defaults.imgSrc1;
-    let img2 = defaults.imgSrc2;
-    let placeholder = document.getElementsByClassName(defaults.containerName)[0];
-    let directionX, directionY;
+    constructor() {
+        super()
+        this.state = {
+            options: defaults
+        };
+        this.placeholder = React.createRef();
+    }
 
-    let column, blind, blindImg;
-    let bgImg, rot;
-    let colL;
-    let colW = (placeholder.offsetWidth / cols) - margin;
-    for (let i=0; i < cols; i++)
-    {
-        colL = ((colW + margin) * i);
 
-        column = document.createElement('div');
-        column.className = "column";
-        column.style.width = colW + "px";
-        column.style.left = colL + "px";
-        placeholder.appendChild(column);
+    componentDidMount() {
 
-        for (let j=0; j<4; j++)
-        {
-            blind = document.createElement('div');
-            blind.className = "blind";
-            blind.style.width = colW + "px";
-            blindImg = document.createElement('div');
-            blindImg.className = "blindImg";
+        this.generateContent();
 
-            switch (j){
-                case 0:
-                    TweenMax.set(blind, {rotationY: "0"});
-                    bgImg = img1;
-                    break;
-                case 1:
-                    TweenMax.set(blind, {rotationY: "90"});
-                    bgImg = img2;
-                    break;
-                case 2:
-                    TweenMax.set(blind, {rotationY: "180"});
-                    bgImg = img1;
-                    break;
-                case 3:
-                    TweenMax.set(blind, {rotationY: "270"});
-                    bgImg = img2;
-                    break;
-            }
-            blindImg.style.width = placeholder.offsetWidth + "px";
-            blindImg.style.backgroundImage = "url("+bgImg+")";
-            blindImg.style.left = -colL + "px";
+    }
 
-            column.appendChild(blind);
-            blind.appendChild(blindImg);
+    fixTilePosition = (tile, ind, time, w, h) => {
 
-            TweenMax.set(blind, { transformOrigin:"50% 50% " + -colW/2, transformStyle: "preserve-3d"});
+        let {rows, columns} = this.state.options;
+        if (time == null) time = 0;
+        let centr, centrCol, centrRow, offsetW, offsetH, left, top;
+
+        centr = Math.floor(columns * rows / 2);
+        centrCol = Math.ceil(centr / columns);
+        centrRow = Math.ceil(centr / rows);
+
+        offsetW = w / centrCol;
+        offsetH = h / centrRow;
+
+        left = (Math.round((ind % columns - centrCol + 1) * offsetW));
+        top = (Math.round((Math.floor(ind / columns) - centrRow + 1) * offsetH));
+
+        //console.log(left, top)
+
+        TweenMax.to(tile, time, {css: {backgroundPosition: left + "px " + top + "px"}, ease: Power1.easeOut});
+    }
+
+    generateContent = () => {
+        let {rows, columns, margin} = this.state.options;
+
+
+        // let placeholder = document.getElementsByClassName(defaults.containerName)[0];
+        let container = document.createElement('div');
+        container.className = "gridContainer";
+        this.placeholder.appendChild(container);
+
+        let gridTile;
+
+        let w = (container.offsetWidth / columns) - margin;
+        let h = (container.offsetHeight / rows) - margin;
+        let arr = [];
+
+        for (let i = 0, l = rows * columns; i < l; i++) {
+            gridTile = document.createElement('div');
+            gridTile.className = "gridTile";
+            gridTile.style.backgroundImage = "url(" + defaults.imgSrc + ")";
+
+
+            arr = [(w + margin) * (i % columns), (h + margin) * Math.floor(i / columns), ((w + margin) * (i % columns) + w - margin), (h + margin) * Math.floor(i / columns), ((w + margin) * (i % columns) + w - margin), ((h + margin) * Math.floor(i / columns) + h - margin), (w + margin) * (i % columns), ((h + margin) * Math.floor(i / columns) + h - margin)];
+
+            // console.log(i + " ====>>> " + arr + " ||||| " + i%c  + " |||||| " + i/c);
+
+
+            TweenMax.set(gridTile, {
+                webkitClipPath: 'polygon(' + arr[0] + 'px ' + arr[1] + 'px,' + arr[2] + 'px ' + arr[3] + 'px, ' + arr[4] + 'px ' + arr[5] + 'px, ' + arr[6] + 'px ' + arr[7] + 'px)',
+                clipPath: 'polygon(' + arr[0] + 'px ' + arr[1] + 'px,' + arr[2] + 'px ' + arr[3] + 'px, ' + arr[4] + 'px ' + arr[5] + 'px, ' + arr[6] + 'px ' + arr[7] + 'px)'
+            });
+
+            container.appendChild(gridTile);
+
+            this.fixTilePosition(gridTile, i);
         }
 
-        TweenMax.set(column, {transformStyle:"preserve-3d", transformPerspective:1000, rotationY:0});
-
-        column.addEventListener("mouseenter", function(event){
-            var elem = event.currentTarget;
-            var rotY = elem._gsTransform.rotationY;
-
-            if(directionX > 0){
-                TweenMax.to(elem, 1, {rotationY:Math.floor(rotY/90)*90+90, transformOrigin:"50% 50% -" + colW/2, ease:Back.easeOut});
-            }else{
-                TweenMax.to(elem, 1, {rotationY:Math.floor(rotY/90)*90-90, transformOrigin:"50% 50% -" + colW/2, ease:Back.easeOut});
+        this.placeholder.addEventListener("mouseover", function (e) {
+            let allTiles = e.currentTarget.querySelectorAll(".gridTile");
+            for (let t = 0, le = allTiles.length; t < le; t++) {
+                TweenMax.to(allTiles[t], defaults.animTime, {
+                    css: {backgroundPosition: "0px 0px"},
+                    ease: Power1.easeOut
+                });
             }
         })
+
+        this.placeholder.addEventListener("mouseleave", function (e) {
+            let allTiles = e.currentTarget.querySelectorAll(".gridTile");
+            for (let ti = 0, len = allTiles.length; ti < len; ti++) {
+                this.fixTilePosition(allTiles[ti], ti, defaults.animTime,w, h);
+            }
+        })
+    };
+
+
+
+
+    render() {
+        return (
+            <div className="placeholder" ref={this.placeholder}/>
+
+        );
     }
-    document.addEventListener('mousemove', function (event) {
-        directionX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
-        directionY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
-    });
 }
 
-VenetianBlinds(options);
+export default ImageGrid;
+

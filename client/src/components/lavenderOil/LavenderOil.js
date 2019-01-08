@@ -1,36 +1,23 @@
 import React, {Component} from 'react';
+import ImageGrid from "./Responsive-Header";
+
+// let options = {
+//     imgSrc : "http://platinum-communities.com/wp-content/uploads/2017/11/lavender-1117275_960_720.jpg",
+//     containerName : "placeholder",
+//     rows:5,
+//     columns:5,
+//     margin:2.5,
+//     animTime: 0.3
+// }
+
 
 class LavenderOil extends Component {
 
     render() {
         return (
-            <div id="home" className="main">
-                <section id="main-slider" className="no-margin">
-                    <div className="carousel slide" data-ride="carousel">
-                        <div className="carousel-inner">
-                            <img src="/lavender-back.jpg" className="back-image" role="presentation"/>
-                            <div className="item active item active">
-                                <div className="container main-container">
-                                    <div className="col-sm-12">
-                                        <div className="carousel-content centered">
-                                            <h2 className="boxed animation animated-item-1 fade-down header-title">LAVENDER
-                                                OIL -
-                                                PRODUCTION</h2>
-                                            <br/>
-                                            <h3 className="boxed animation animated-item-2 fade-up"> The Gold Of
-                                                Bulgaria</h3>
-                                            <br/>
-                                            <h4>The Life of quality
-                                                and prestige</h4>
-                                            <br/>
-                                            <a className="btn btn-md animation bounce-in" href="#services">Learn
-                                                More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div id="lavender" className="main">
+                <section id="lavender-slider" className="no-margin">
+                    <ImageGrid></ImageGrid>
                 </section>
             </div>
         );

@@ -499,8 +499,8 @@ body {
 .placeholder {
   display: inline-block;
   position: relative;
-  width: 600px;
-  height: 600px;
+  width: 100%;
+  height: 1600px;
   overflow: hidden;
   box-sizing: border-box;
   margin-top: 100px;

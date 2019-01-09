@@ -20,10 +20,9 @@ class ImageGrid extends Component {
         };
         this.placeholder = React.createRef();
         this.gridContainer = React.createRef();
-
     }
 
-    resize= () => {
+    resize = () => {
         let {rows, columns, margin} = this.state.options;
         let width = (this.gridContainer.current.offsetWidth / columns) - margin;
         let height = (this.gridContainer.current.offsetHeight / rows) - margin;
@@ -32,12 +31,14 @@ class ImageGrid extends Component {
 
     componentDidMount() {
         this.placeholder.current.appendChild(this.gridContainer.current);
-
-
         this.resize();
         window.addEventListener("resize", this.resize.bind(this));
-        this.placeholder.current.addEventListener("mouseover", this.mouseOverListener.bind(this));
-        this.placeholder.current.addEventListener("mouseleave", this.mouseLeaveListener.bind(this));
+        this.gridContainer.current.querySelectorAll(".purple").forEach((el) => {
+            el.addEventListener("mouseover", this.mouseOverListener.bind(this))
+        });
+        this.gridContainer.current.querySelectorAll(".purple").forEach((el) => {
+            el.addEventListener("mouseleave", this.mouseLeaveListener.bind(this))
+        });
     }
 
     fixTilePosition = (tile, ind, time, w, h) => {
@@ -56,11 +57,10 @@ class ImageGrid extends Component {
         left = (Math.round((ind % columns - centrCol + 1) * offsetW));
         top = (Math.round((Math.floor(ind / columns) - centrRow + 1) * offsetH));
 
-        console.log(left, top);
-
         TweenMax.to(tile, time, {
             css: {backgroundPosition: left + "px " + top + "px"},
-            ease: Power1.easeOut});
+            ease: Power1.easeOut
+        });
     }
 
     mouseOverListener = () => {
@@ -73,9 +73,13 @@ class ImageGrid extends Component {
         }
     }
 
-    componentWillUnmount(){
-        this.placeholder.current.removeEventListener("mouseover", this.mouseOverListener);
-        this.placeholder.current.removeEventListener("mouseleave", this.mouseLeaveListener);
+    componentWillUnmount() {
+        this.gridContainer.current.querySelectorAll(".purple").forEach((el) => {
+            el.removeEventListener("mouseover", this.mouseOverListener)
+        });
+        this.gridContainer.current.querySelectorAll(".purple").forEach((el) => {
+            el.removeEventListener("mouseleave", this.mouseLeaveListener)
+        });
     }
 
     mouseLeaveListener = () => {
@@ -101,8 +105,14 @@ class ImageGrid extends Component {
 
         for (let i = 0, l = rows * columns; i < l; i++) {
             gridTile = document.createElement('div');
-            gridTile.className = "gridTile";
-            gridTile.style.backgroundImage = "url(" + defaults.imgSrc + ")";
+            gridTile.id = `gridTile-${i}`;
+            if (i === 7 || i === 8) {
+                gridTile.style.background = "#9773dd";
+                gridTile.className = "gridTile purple";
+            } else {
+                gridTile.style.backgroundImage = "url(" + defaults.imgSrc + ")";
+                gridTile.className = "gridTile";
+            }
 
             arr = [(width + margin) * (i % columns),
                 (height + margin) * Math.floor(i / columns),
@@ -121,7 +131,12 @@ class ImageGrid extends Component {
             this.gridContainer.current.appendChild(gridTile);
             this.fixTilePosition(gridTile, i, animTime, width, height);
         }
-
+        this.gridContainer.current.querySelectorAll(".purple").forEach((el) => {
+            el.addEventListener("mouseover", this.mouseOverListener.bind(this))
+        });
+        this.gridContainer.current.querySelectorAll(".purple").forEach((el) => {
+            el.addEventListener("mouseleave", this.mouseLeaveListener.bind(this))
+        });
     }
 
     render() {

@@ -510,8 +510,16 @@ body {
   width: 100%;
   height: 100%;
 }
-
-.gridTile {
+.gridContainer.popUpGrid {
+  background: #49355c;
+}
+.gridContainer.popUpGrid .gridTile {
+  transition-timing-function: ease-in;
+  /* Quick on the way out */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.gridContainer .gridTile {
   position: absolute;
   top: 0px;
   left: 0px;

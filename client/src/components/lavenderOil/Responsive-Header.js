@@ -16,7 +16,8 @@ class ImageGrid extends Component {
     constructor() {
         super()
         this.state = {
-            options: defaults
+            options: defaults,
+            isGridClosed: false
         };
         this.placeholder = React.createRef();
         this.gridContainer = React.createRef();
@@ -94,6 +95,10 @@ class ImageGrid extends Component {
         }
     }
 
+    toggleGrid = () => {
+        this.setState({isGridClosed: !this.state.isGridClosed});
+    }
+
     generateCells = (width, height) => {
         let {rows, columns, margin, animTime} = this.state.options;
         let gridTile;
@@ -109,6 +114,7 @@ class ImageGrid extends Component {
             if (i === 7 || i === 8) {
                 gridTile.style.background = "#9773dd";
                 gridTile.className = "gridTile purple";
+                gridTile.onclick = () => {this.toggleGrid()};
             } else {
                 gridTile.style.backgroundImage = "url(" + defaults.imgSrc + ")";
                 gridTile.className = "gridTile";
@@ -142,7 +148,7 @@ class ImageGrid extends Component {
     render() {
         return (
             <div className="placeholder" ref={this.placeholder}>
-                <div className="gridContainer" ref={this.gridContainer}/>
+                <div className={`gridContainer ${this.state.isGridClosed ? "popUpGrid": ""}`} ref={this.gridContainer}/>
             </div>
         );
     }

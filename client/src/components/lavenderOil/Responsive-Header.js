@@ -24,7 +24,7 @@ class ImageGrid extends Component {
         // this.generateCells = this.generateCells.bind(this);
 
         this.mouseLeaveListener = this.mouseLeaveListener.bind(this);
-        this.mouseLeaveListener = this.mouseLeaveListener.bind(this);
+        this.mouseOverListener = this.mouseOverListener.bind(this);
     }
 
 
@@ -78,9 +78,11 @@ class ImageGrid extends Component {
         left = (Math.round((ind % columns - centrCol + 1) * offsetW));
         top = (Math.round((Math.floor(ind / columns) - centrRow + 1) * offsetH));
 
-        //console.log(left, top)
+        console.log(left, top)
 
-        TweenMax.to(tile, time, {css: {backgroundPosition: left + "px " + top + "px"}, ease: Power1.easeOut});
+        TweenMax.to(tile, time, {
+            css: {backgroundPosition: left + "px " + top + "px"},
+            ease: Power1.easeOut});
     }
 
     mouseOverListener = (e) => {
@@ -91,6 +93,11 @@ class ImageGrid extends Component {
                 ease: Power1.easeOut
             });
         }
+    }
+
+    componentWillUnmount(){
+        this.placeholder.current.removeEventListener("mouseover", this.mouseOverListener);
+        this.placeholder.current.removeEventListener("mouseleave", this.mouseLeaveListener);
     }
 
     mouseLeaveListener = (e, width, height) => {

@@ -21,45 +21,23 @@ class ImageGrid extends Component {
         this.placeholder = React.createRef();
         this.gridContainer = React.createRef();
 
-        // this.generateCells = this.generateCells.bind(this);
-
-        this.mouseLeaveListener = this.mouseLeaveListener.bind(this);
-        this.mouseOverListener = this.mouseOverListener.bind(this);
     }
 
-
-
-    // updateDimensions = () => {
-    //     let {rows, columns, margin} = this.state.options;
-    //     // let {width, height} = this.state;
-    //
-    //     let currentWidth = (window.innerWidth / columns) - margin;
-    //     let currentHeight = (window.innerWidth / rows) - margin;
-    //
-    //     // if (width !== currentWidth || height !== currentHeight) {
-    //         this.setState({width: currentWidth, height: currentHeight});
-    //
-    //         this.generateCells(currentWidth, currentWidth);
-    //     // }
-    // }
-
-
-
-
-    componentDidMount() {
+    resize= () => {
         let {rows, columns, margin} = this.state.options;
-
-        this.placeholder.current.appendChild(this.gridContainer.current);
-
         let width = (this.gridContainer.current.offsetWidth / columns) - margin;
         let height = (this.gridContainer.current.offsetHeight / rows) - margin;
         this.generateCells(width, height);
-        //
-        // this.placeholder.current.addEventListener("resize", this.generateCells(width, height));
-        this.placeholder.current.addEventListener("mouseover", e => this.mouseOverListener(e));
+    }
 
-        this.placeholder.current.addEventListener("mouseleave", e => this.mouseLeaveListener(e, width, height));
+    componentDidMount() {
+        this.placeholder.current.appendChild(this.gridContainer.current);
 
+
+        this.resize();
+        window.addEventListener("resize", this.resize.bind(this));
+        this.placeholder.current.addEventListener("mouseover", this.mouseOverListener.bind(this));
+        this.placeholder.current.addEventListener("mouseleave", this.mouseLeaveListener.bind(this));
     }
 
     fixTilePosition = (tile, ind, time, w, h) => {
@@ -78,15 +56,15 @@ class ImageGrid extends Component {
         left = (Math.round((ind % columns - centrCol + 1) * offsetW));
         top = (Math.round((Math.floor(ind / columns) - centrRow + 1) * offsetH));
 
-        console.log(left, top)
+        console.log(left, top);
 
         TweenMax.to(tile, time, {
             css: {backgroundPosition: left + "px " + top + "px"},
             ease: Power1.easeOut});
     }
 
-    mouseOverListener = (e) => {
-        let allTiles = e.currentTarget.querySelectorAll(".gridTile");
+    mouseOverListener = () => {
+        let allTiles = this.gridContainer.current.querySelectorAll(".gridTile");
         for (let t = 0, le = allTiles.length; t < le; t++) {
             TweenMax.to(allTiles[t], this.state.options.animTime, {
                 css: {backgroundPosition: "0px 0px"},
@@ -100,18 +78,26 @@ class ImageGrid extends Component {
         this.placeholder.current.removeEventListener("mouseleave", this.mouseLeaveListener);
     }
 
-    mouseLeaveListener = (e, width, height) => {
+    mouseLeaveListener = () => {
+
+        let {rows, columns, margin} = this.state.options;
+        let width = (this.gridContainer.current.offsetWidth / columns) - margin;
+        let height = (this.gridContainer.current.offsetHeight / rows) - margin;
         let {animTime} = this.state.options;
-        let allTiles = e.currentTarget.querySelectorAll(".gridTile");
+        let allTiles = this.gridContainer.current.querySelectorAll(".gridTile");
         for (let ti = 0, len = allTiles.length; ti < len; ti++) {
             this.fixTilePosition(allTiles[ti], ti, animTime, width, height);
         }
     }
 
     generateCells = (width, height) => {
-        let {rows, columns, margin} = this.state.options;
+        let {rows, columns, margin, animTime} = this.state.options;
         let gridTile;
         let arr = [];
+
+        while (this.gridContainer.current.hasChildNodes()) {
+            this.gridContainer.current.removeChild(this.gridContainer.current.lastChild);
+        }
 
         for (let i = 0, l = rows * columns; i < l; i++) {
             gridTile = document.createElement('div');
@@ -133,8 +119,9 @@ class ImageGrid extends Component {
             });
 
             this.gridContainer.current.appendChild(gridTile);
-            this.fixTilePosition(gridTile, i);
+            this.fixTilePosition(gridTile, i, animTime, width, height);
         }
+
     }
 
     render() {

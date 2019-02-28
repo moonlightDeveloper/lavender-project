@@ -1,5 +1,4 @@
 import React from "react";
-import AOS from 'aos';
 
 const HomeHeader =() =>  {
         return (
@@ -20,6 +19,7 @@ const HomeHeader =() =>  {
                                         <br/>
                                         <h4>The Life of quality
                                             and prestige</h4>
+                                            <img src="/natural.png" className="natural-img" role="presentation"/>
                                         <br/>
                                         <a className="btn btn-md animation bounce-in" href="#services">Learn
                                             More</a>

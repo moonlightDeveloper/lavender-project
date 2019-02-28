@@ -68,7 +68,7 @@ body {
     font-size: 2em;
   }
 }
-#main-slider .carousel-inner img, #main-slider-lavender .carousel-inner img {
+#main-slider .carousel-inner img.back-image, #main-slider-lavender .carousel-inner img.back-image {
   padding-top: 3em;
   width: 100%;
 }
@@ -388,19 +388,26 @@ body {
   z-index: -300;
 }
 
-.stat-icon {
-  color: #777679;
-  font-size: 44px;
-}
-
 .center {
   text-align: center;
 }
 
 #content-wrapper section#stats {
-  box-shadow: 0px 0px 41px 4px rgba(218, 213, 218, 0.48);
+  box-shadow: 0px 0px 26px 15px rgba(218, 213, 218, 0.67);
   padding-top: 20px;
   margin-bottom: 2em;
+  color: #573997;
+}
+#content-wrapper section#stats .stat-icon {
+  color: #777679;
+  font-size: 44px;
+}
+#content-wrapper section#stats .stat-icon.prpl {
+  color: #573997;
+}
+
+#content-wrapper section#stats.prpl {
+  color: #777679;
 }
 
 #stats {

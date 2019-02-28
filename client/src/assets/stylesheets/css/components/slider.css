@@ -52,7 +52,7 @@
     font-size: 2em;
   }
 }
-#main-slider .carousel-inner img, #main-slider-lavender .carousel-inner img {
+#main-slider .carousel-inner img.back-image, #main-slider-lavender .carousel-inner img.back-image {
   padding-top: 3em;
   width: 100%;
 }

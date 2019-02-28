@@ -21,7 +21,7 @@ class BenefitsContent extends React.Component {
                     </div>
                 </div>
 
-                <section id="stats" className="divider-section">
+                <section id="stats" className="divider-section prpl">
                     <div className="gap"></div>
                     <div className="container">
                         <div className="row">
@@ -29,21 +29,21 @@ class BenefitsContent extends React.Component {
                                 <div className="center bounce-in">
                                     <span className="stat-icon"><i data-aos="flip-left" data-aos-duration="2000"
                                                                    className="fas fa-award"/></span>
-                                    <h3>BIO CERTIFICATE</h3>
+                                    <h3>100% NATURAL PRODUCT</h3>
                                 </div>
                             </div>
-                            <div className="col-md-3 col-xs-6">
+                             <div className="col-md-3 col-xs-6">
                                 <div className="center bounce-in">
                                     <span className="stat-icon"><i data-aos="flip-left" data-aos-duration="2000"
                                                                    className="far fa-file-alt"/></span>
-                                    <h3>TRANSPORTATION DOCUMENTS</h3>
+                                    <h3>SERTIFICATE OF ANALYSIS</h3>
                                 </div>
-                            </div>
+                            </div>                          
                             <div className="col-md-3 col-xs-6">
                                 <div className="center bounce-in">
                                     <span className="stat-icon"><i data-aos="flip-left" data-aos-duration="2000"
                                                                    className="fas fa-dollar-sign"/></span>
-                                    <h3>DISCOUNT FOR LARGER AMOUNTS</h3>
+                                    <h3>SAMPLE FOR TESTING</h3>
                                 </div>
                             </div>
                             <div className="col-md-3 col-xs-6">

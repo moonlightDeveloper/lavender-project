@@ -81,24 +81,26 @@
   z-index: -300;
 }
 
-.stat-icon {
-  color: $darkgrey;
-  font-size: 44px;
-
-}
-
 .center {
   text-align: center;
 }
 
-section {
-
-}
-
 #content-wrapper section#stats {
-  box-shadow: 0px 0px 41px 4px rgba(218, 213, 218, 0.48);
+  box-shadow:  $boxShadow; 
   padding-top: 20px;
   margin-bottom: 2em;
+  color: $darkPurple;
+
+  .stat-icon {
+   color: $darkgrey;
+   font-size: 44px;  
+  }
+  .stat-icon.prpl{
+    color: $darkPurple;
+  }
+}
+#content-wrapper section#stats.prpl{
+  color: $darkgrey;
 }
 
 #stats {

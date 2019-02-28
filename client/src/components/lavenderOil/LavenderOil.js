@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import SortsContent from './Sorts-Content';
 
 class LavenderOil extends Component {
 
@@ -16,7 +17,11 @@ class LavenderOil extends Component {
                     </div>
                     </div>       
             </section>
+            <div id="content-wrapper">
+            <SortsContent/>
+
             Photos 
+            </div>
         </div>
         );
     }

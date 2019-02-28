@@ -15,7 +15,6 @@ body {
 }
 
 /*  Slider */
-<<<<<<< HEAD
 #main-slider-lavender {
   max-height: 40em;
   overflow: hidden;
@@ -70,26 +69,6 @@ body {
   }
 }
 #main-slider .carousel-inner img, #main-slider-lavender .carousel-inner img {
-=======
-#main-slider {
-  position: relative;
-  z-index: 5;
-  color: #202020;
-  max-height: 50em;
-}
-#main-slider .carousel-inner {
-  overflow: visible;
-}
-#main-slider .carousel-inner .carousel-content {
-  margin-top: 100px;
-}
-@media (max-width: 365px) {
-  #main-slider .carousel-inner .carousel-content h2.header-title {
-    font-size: 2em;
-  }
-}
-#main-slider .carousel-inner img {
->>>>>>> f891d09e4bef900798e3b06c8880bea4d4aeb916
   padding-top: 3em;
   width: 100%;
 }
@@ -392,11 +371,7 @@ body {
 }
 
 .testimonial-quote blockquote p {
-<<<<<<< HEAD
   color: #944eb5;
-=======
-  color: #ff4d54;
->>>>>>> f891d09e4bef900798e3b06c8880bea4d4aeb916
   line-height: 1.4 !important;
 }
 
@@ -414,11 +389,7 @@ body {
 }
 
 .stat-icon {
-<<<<<<< HEAD
   color: #777679;
-=======
-  color: white;
->>>>>>> f891d09e4bef900798e3b06c8880bea4d4aeb916
   font-size: 44px;
 }
 
@@ -427,13 +398,9 @@ body {
 }
 
 #content-wrapper section#stats {
-<<<<<<< HEAD
   box-shadow: 0px 0px 41px 4px rgba(218, 213, 218, 0.48);
   padding-top: 20px;
   margin-bottom: 2em;
-=======
-  padding-top: 20px;
->>>>>>> f891d09e4bef900798e3b06c8880bea4d4aeb916
 }
 
 #stats {
@@ -455,18 +422,10 @@ body {
 }
 
 .divider-section {
-<<<<<<< HEAD
   position: relative;
   overflow: hidden;
   display: block;
   color: black;
-=======
-  background-color: #713e4c;
-  position: relative;
-  overflow: hidden;
-  display: block;
-  color: #f5f5f5;
->>>>>>> f891d09e4bef900798e3b06c8880bea4d4aeb916
 }
 .divider-section a {
   color: #f5f5f5;
@@ -514,23 +473,16 @@ body {
   transition: 0.8s all;
   mix-blend-mode: screen;
 }
-<<<<<<< HEAD
 @supports (-ms-ime-align: auto) {
   .img-production-container div[class^=col-] .img-prod .production-img .img-transperant {
     opacity: 0.1;
   }
 }
-=======
->>>>>>> f891d09e4bef900798e3b06c8880bea4d4aeb916
 .img-production-container div[class^=col-] .img-prod:hover h5 {
   display: block;
 }
 .img-production-container div[class^=col-] .img-prod:hover .img-gradient {
-<<<<<<< HEAD
   background: rgba(37, 18, 56, 0.82);
-=======
-  background: #251238d1;
->>>>>>> f891d09e4bef900798e3b06c8880bea4d4aeb916
   width: 100%;
   height: 100%;
   top: 0;

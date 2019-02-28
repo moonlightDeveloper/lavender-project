@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import SortsContent from './Sorts-Content';
+import Gallery from './Gallery';
 
 class LavenderOil extends Component {
 
@@ -19,8 +20,7 @@ class LavenderOil extends Component {
             </section>
             <div id="content-wrapper">
             <SortsContent/>
-
-            Photos 
+            <Gallery/>           
             </div>
         </div>
         );

@@ -17,13 +17,9 @@ class Home extends Component {
                                         <div className="carousel-content centered">
                                             <h2 className="boxed animation animated-item-1 fade-down header-title">LAVENDER
                                                 OIL -
-                                                PRODUCTION</h2>
-                                            <br/>
+                                                PRODUCTION</h2>                                         
                                             <h3 className="boxed animation animated-item-2 fade-up"> The Gold Of
                                                 Bulgaria</h3>
-                                            <br/>
-                                            <h4>The Life of quality
-                                                and prestige</h4>
                                             <br/>
                                             <a className="btn btn-md animation bounce-in" href="#services">Learn
                                                 More</a>
@@ -36,12 +32,12 @@ class Home extends Component {
                 </section>
                 <div id="content-wrapper">
                     <section id="about-us" className="white">
+                    <h2 className="main-title-header">A Little About Us</h2>
                         <div className="container">
                             <div className="gap"></div>
                             <div className="row">
                                 <div className="col-md-12">
-                                    <div className=" gap fade-down section-heading">
-                                        <h2 className="main-title">A Little About Us</h2>
+                                    <div className=" gap fade-down section-heading">                                        
                                         <hr/>
                                         <div className="testimonial-quote">
                                             <blockquote>

@@ -46,12 +46,11 @@ class Gallery extends Component {
 
     render() {
         return (
-            <section className="family-section">
+            <section className="gallery-section">
                 <div className="container">
                     <div className="gap"></div>
                     <div className="gap fade-down section-heading">
-                        <h2 className="main-title">Gallery</h2>
-                        <hr/>
+                        <h2 className="main-title">Gallery</h2>                     
                     </div>
                     <div id="meet-the-team" className="row">
                     {this.renderPhotos()}                        

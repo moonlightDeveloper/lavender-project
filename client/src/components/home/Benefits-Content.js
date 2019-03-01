@@ -14,7 +14,7 @@ class BenefitsContent extends React.Component {
 
     render() {
         return (
-            <div className="white">
+            <div className="light-prpl">
                 <div className="container">
                     <div className="gap fade-down section-heading">
                         <h2 className="main-title">What We Can Provide</h2>

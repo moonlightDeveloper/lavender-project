@@ -104,6 +104,43 @@ h2.main-title-header{
   color: white;
   padding-left: 2.5em;
 }
+.prpl-title{
+  color: $darkPurple;
+}
+
+.sub-main-title{
+  margin: 0;
+}
+
+.natural-img-container{
+  .natural-img{
+    @media(max-width: 768px) {
+     display: none;  
+    }
+  }
+}
+.natural-img-container-mobile{
+  @media(max-width: 768px) {
+    width: 100%;
+    text-align: center;
+    background: $lightPurpl
+   
+   }
+   @media(min-width: 769px) {
+    display: none;
+   }
+ 
+  .natural-img{
+    @media(max-width: 768px) {
+      padding: 1em;     
+      height: 12em;
+      margin-top: 2em;
+      background: white;
+      border-radius: 50%;
+   }
+  }
+}
+
 
 #content-wrapper section#stats {  
   padding-top: 20px; 
@@ -182,6 +219,10 @@ h2.main-title-header{
         background-size: cover;
         background-repeat: no-repeat;
         margin-bottom: 2em;
+
+        @media(max-width: 768px) {
+         height: 18em;
+        }
 
         .img-transperant {
           height: 100%;

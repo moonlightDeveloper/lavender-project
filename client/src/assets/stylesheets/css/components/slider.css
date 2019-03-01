@@ -7,6 +7,12 @@
   width: 100%;
   filter: saturate(1.5);
 }
+@media (max-width: 768px) {
+  #main-slider-lavender img {
+    font-size: 2em;
+    margin-top: 2.4em;
+  }
+}
 #main-slider-lavender .txt-container {
   position: absolute;
   z-index: 4444;
@@ -27,6 +33,11 @@
   margin-top: 30px;
   border: 5px solid black;
 }
+@media (max-width: 768px) {
+  #main-slider-lavender .txt-container .main-container h2 {
+    padding: 5px;
+  }
+}
 @media screen and (max-width: 1500px) {
   #main-slider-lavender .txt-container .main-container h2 {
     background-color: rgba(0, 0, 0, 0.61);
@@ -44,16 +55,16 @@
   z-index: 5;
   color: #202020;
 }
-#main-slider .carousel-inner .carousel-content, #main-slider-lavender .carousel-inner .carousel-content {
+#main-slider .carousel-content, #main-slider-lavender .carousel-content {
   margin-top: 100px;
 }
 @media (max-width: 365px) {
-  #main-slider .carousel-inner .carousel-content h2.header-title, #main-slider-lavender .carousel-inner .carousel-content h2.header-title {
+  #main-slider .carousel-content h2.header-title, #main-slider-lavender .carousel-content h2.header-title {
     font-size: 2em;
   }
 }
-#main-slider .carousel-inner img.back-image, #main-slider-lavender .carousel-inner img.back-image {
-  padding-top: 3em;
+#main-slider img.back-image, #main-slider-lavender img.back-image {
+  padding-top: 4.4em;
   width: 100%;
 }
 
@@ -92,6 +103,11 @@
 @media (max-width: 1000px) {
   #main-slider .carousel .btn {
     margin-top: 0;
+  }
+}
+@media (max-width: 768px) {
+  #main-slider .carousel .btn {
+    display: none;
   }
 }
 #main-slider .carousel .boxed {

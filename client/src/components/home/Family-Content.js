@@ -21,7 +21,7 @@ class FamilyContent extends Component {
                 <div className="container">
                     <div className="gap"></div>
                     <div className="gap fade-down section-heading">
-                        <h2 className="main-title">Meet Our Family</h2>                       
+                        <h2 className="prpl-title">Meet Our Family</h2>                       
                     </div>
                     <div id="meet-the-team" className="row">
                         <div className={RESPONSIVE_CLASS + ' img-animation'}>

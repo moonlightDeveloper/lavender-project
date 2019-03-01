@@ -50,7 +50,7 @@ class Gallery extends Component {
                 <div className="container">
                     <div className="gap"></div>
                     <div className="gap fade-down section-heading">
-                        <h2 className="main-title">Gallery</h2>                     
+                        <h2 className="prpl-title">Gallery</h2>                     
                     </div>
                     <div id="meet-the-team" className="row">
                     {this.renderPhotos()}                        

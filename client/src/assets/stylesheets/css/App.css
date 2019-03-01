@@ -11,7 +11,7 @@ body {
 }
 
 .main {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /*  Slider */
@@ -66,22 +66,67 @@ body {
   color: white;
 }
 
-#main-slider, #main-slider-lavender {
+#main-slider, #main-slider-lavender, #main-slider-contact {
   position: relative;
   z-index: 5;
   color: #202020;
 }
-#main-slider .carousel-content, #main-slider-lavender .carousel-content {
+#main-slider .carousel-content, #main-slider-lavender .carousel-content, #main-slider-contact .carousel-content {
   margin-top: 100px;
 }
 @media (max-width: 365px) {
-  #main-slider .carousel-content h2.header-title, #main-slider-lavender .carousel-content h2.header-title {
+  #main-slider .carousel-content h2.header-title, #main-slider-lavender .carousel-content h2.header-title, #main-slider-contact .carousel-content h2.header-title {
     font-size: 2em;
   }
 }
-#main-slider img.back-image, #main-slider-lavender img.back-image {
+#main-slider img.back-image, #main-slider-lavender img.back-image, #main-slider-contact img.back-image {
   padding-top: 4.4em;
   width: 100%;
+}
+
+#main-slider-contact {
+  margin-top: -50%;
+}
+#main-slider-contact img {
+  width: 100%;
+  max-width: 80em;
+  left: 0;
+  right: 0;
+  display: block;
+  margin-left: auto;
+  margin-top: 20%;
+  margin-right: auto;
+}
+#main-slider-contact .txt-container {
+  position: absolute;
+  z-index: 4444;
+  top: 50%;
+  width: 100%;
+}
+@media (min-width: 1800px) {
+  #main-slider-contact .txt-container {
+    top: 60%;
+  }
+}
+#main-slider-contact .txt-container .main-container h2 {
+  padding: 10px 15px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 44px;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-top: 30px;
+  border: 5px solid black;
+}
+@media (max-width: 768px) {
+  #main-slider-contact .txt-container .main-container h2 {
+    padding: 5px;
+  }
+}
+#main-slider-contact .txt-container .main-container .sub {
+  margin: 0;
+  font-weight: 900;
 }
 
 .backstretch:before {
@@ -519,6 +564,13 @@ h2.main-title-header {
 }
 .img-production-container div[class^=col-] .img-prod {
   position: relative;
+  height: 30em;
+}
+@media (max-width: 768px) {
+  .img-production-container div[class^=col-] .img-prod {
+    height: 18em;
+    margin-bottom: 2em;
+  }
 }
 .img-production-container div[class^=col-] .img-prod h5 {
   position: absolute;
@@ -527,23 +579,18 @@ h2.main-title-header {
   z-index: 24;
   width: 100%;
   font-size: 1.5em;
-  margin-top: calc(100% - 80px);
   font-weight: 300;
   padding: 0.5em;
   color: #fcfcfc;
   text-shadow: 0px 4px 3px #24143a, 0px 8px 13px #1c0935, 0px 18px 23px #261240;
   display: none;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .img-production-container div[class^=col-] .img-prod .production-img {
-  height: 30em;
+  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  margin-bottom: 2em;
-}
-@media (max-width: 768px) {
-  .img-production-container div[class^=col-] .img-prod .production-img {
-    height: 18em;
-  }
 }
 .img-production-container div[class^=col-] .img-prod .production-img .img-transperant {
   height: 100%;
@@ -577,6 +624,64 @@ h2.main-title-header {
   position: absolute;
 }
 .img-production-container div[class^=col-] .img-prod:hover .img-transperant {
+  background-position: 100% 100%;
+}
+
+.front.card {
+  position: relative;
+}
+.front.card .more-icon {
+  position: absolute;
+  margin: auto;
+  text-align: center;
+  z-index: 24;
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: 300;
+  padding: 0.5em;
+  color: #fcfcfc;
+  text-shadow: 0px 4px 3px #24143a, 0px 8px 13px #1c0935, 0px 18px 23px #261240;
+  display: none;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.front.card .img-transperant {
+  height: 100%;
+  position: relative;
+  line-height: 16;
+  color: #f8f8f8;
+  text-align: center;
+  background: #000;
+  background: -moz-linear-gradient(-45deg, #000000 0%, #000000 25%, #1e539e 50%, #ff3083 75%, #7800a8 100%);
+  background: -webkit-linear-gradient(-45deg, #000000 0%, #000000 25%, #1e539e 50%, #ff3083 75%, #7800a8 100%);
+  background: linear-gradient(135deg, #000000 0%, #000000 25%, #dcd277 50%, #1e0233 75%, #7800a8 100%);
+  background-size: 400% 400%;
+  cursor: pointer;
+  transition: 0.8s all;
+  mix-blend-mode: screen;
+}
+@supports (-ms-ime-align: auto) {
+  .front.card .img-transperant {
+    opacity: 0.1;
+  }
+}
+.front.card:hover .more-icon {
+  display: block;
+}
+.front.card:hover .more-icon i {
+  padding: 0.6em;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.front.card:hover .img-gradient {
+  background: rgba(37, 18, 56, 0.82);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transition: 0.8s all;
+  position: absolute;
+}
+.front.card:hover .img-transperant {
   background-position: 100% 100%;
 }
 

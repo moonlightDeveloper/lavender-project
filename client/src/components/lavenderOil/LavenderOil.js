@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import SortsContent from './Sorts-Content';
 import Gallery from './Gallery';
+import ContactForm from '../Contact-Form';
 
 class LavenderOil extends Component {
 
@@ -20,7 +21,8 @@ class LavenderOil extends Component {
             </section>
             <div id="content-wrapper">
             <SortsContent/>
-            <Gallery/>           
+            <Gallery/> 
+            <ContactForm/>          
             </div>
         </div>
         );

@@ -3,7 +3,6 @@
 
 /*  Slider */
 
-
 #main-slider-lavender{
   max-height: 40em;
   overflow: hidden;
@@ -55,8 +54,7 @@
   }
 }
 
-#main-slider , #main-slider-lavender {
- //background: greenyellow url("../../../images/lavender-back.jpg");
+#main-slider , #main-slider-lavender, #main-slider-contact {
   position: relative;
   z-index: 5;
   color: $black;
@@ -75,6 +73,54 @@
       padding-top: 4.4em;   
       width: 100%;
     }  
+}
+
+#main-slider-contact{
+  margin-top: -50%;
+  img{
+    width: 100%;
+    max-width: 80em;
+    left: 0;
+    right: 0;
+    display: block;
+    margin-left: auto;
+    margin-top: 20%;
+    margin-right: auto;
+  }
+  .txt-container{
+    position: absolute;
+    z-index: 4444; 
+    top: 50%;
+    width: 100%;
+
+    @media (min-width:1800px) {
+      top: 60%;
+    }  
+    .main-container{     
+      h2{
+        padding: 10px 15px;
+ 
+        display: inline-block;
+        text-transform: uppercase;
+       
+          font-size: 44px;
+          color: black;
+          text-transform: uppercase;
+          letter-spacing: -1px;
+          margin-top: 30px;   
+          border: 5px solid black;
+          
+          @media (max-width:768px) {
+            padding: 5px;
+          }  
+         
+      }
+      .sub{
+        margin: 0;
+        font-weight: 900;
+      }
+    }
+  }
 }
 
 .backstretch:before {

@@ -97,6 +97,9 @@ body {
   margin-top: 20%;
   margin-right: auto;
 }
+#main-slider-contact img.back-image-oil {
+  filter: grayscale(50%) sepia(42%) hue-rotate(-150deg) contrast(1.6);
+}
 #main-slider-contact .txt-container {
   position: absolute;
   z-index: 4444;
@@ -377,7 +380,6 @@ body {
   padding: 0;
   z-index: 5;
   position: relative;
-  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.4);
 }
 
 .white {
@@ -403,6 +405,10 @@ body {
   background-color: #202020;
 }
 
+.border-hr hr {
+  border-top: 1px solid black;
+}
+
 .widget-img {
   max-width: 80px;
   height: auto;
@@ -410,6 +416,10 @@ body {
 
 .about-us-widget {
   background-size: contain;
+}
+
+#lavender-slider {
+  background: white;
 }
 
 .widget-title {
@@ -775,6 +785,31 @@ h2.main-title-header {
   background-origin: center;
 }
 
+.share, .share:before, .share:after, .fabs {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.share .content {
+  color: black;
+  font-weight: 400;
+  letter-spacing: 3px;
+  padding: 0.5em;
+}
+
+.fabs {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  height: 56px;
+  width: 56px;
+  margin: 0.5em;
+  background: #b98f2c;
+}
+.fabs svg {
+  width: 100%;
+  height: 100%;
+  padding: 0.8em;
+}
+
 .navbar-inverse {
   padding: 10px 0;
   background-color: #202020;
@@ -1109,6 +1144,7 @@ section#contact {
 .cont-contactBtn .contact-form {
   max-width: 45em;
   margin-top: 50px;
+  margin-bottom: 5em;
 }
 .cont-contactBtn .contact-form input, .cont-contactBtn .contact-form textarea {
   border: 1px solid #808080;
@@ -1141,7 +1177,7 @@ section#contact {
   width: 100%;
 }
 .cont-contactBtn .contact-form input[type=submit] {
-  background-color: #ff4d54;
+  background-color: black;
   border: none;
   color: #fff;
   height: 45px;

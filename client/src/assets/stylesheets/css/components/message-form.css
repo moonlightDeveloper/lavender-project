@@ -123,6 +123,7 @@ section#contact {
 .cont-contactBtn .contact-form {
   max-width: 45em;
   margin-top: 50px;
+  margin-bottom: 5em;
 }
 .cont-contactBtn .contact-form input, .cont-contactBtn .contact-form textarea {
   border: 1px solid #808080;
@@ -155,7 +156,7 @@ section#contact {
   width: 100%;
 }
 .cont-contactBtn .contact-form input[type=submit] {
-  background-color: #ff4d54;
+  background-color: black;
   border: none;
   color: #fff;
   height: 45px;

@@ -81,6 +81,9 @@
   margin-top: 20%;
   margin-right: auto;
 }
+#main-slider-contact img.back-image-oil {
+  filter: grayscale(50%) sepia(42%) hue-rotate(-150deg) contrast(1.6);
+}
 #main-slider-contact .txt-container {
   position: absolute;
   z-index: 4444;

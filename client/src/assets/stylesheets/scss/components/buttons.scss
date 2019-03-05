@@ -1,0 +1,29 @@
+.share, .share:before, .share:after, .fabs {   
+    cursor: pointer;
+    display: inline-block;
+   
+  }  
+  .share{
+    .content{
+        color: black;
+        font-weight: 400;
+        letter-spacing: 3px;
+        padding: 0.5em;
+    }   
+  }
+  
+  .fabs {
+    box-shadow: 0 2px 5px rgba(#000, .3); 
+    height: 56px;
+    width: 56px;
+    margin: 0.5em;  
+    background: #b98f2c;
+
+    svg{
+        width: 100%;
+        height: 100%;
+        padding: 0.8em;
+    } 
+  }
+  
+    

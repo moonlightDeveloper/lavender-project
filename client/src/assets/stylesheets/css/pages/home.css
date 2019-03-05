@@ -3,7 +3,6 @@
   padding: 0;
   z-index: 5;
   position: relative;
-  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.4);
 }
 
 .white {
@@ -29,6 +28,10 @@
   background-color: #202020;
 }
 
+.border-hr hr {
+  border-top: 1px solid black;
+}
+
 .widget-img {
   max-width: 80px;
   height: auto;
@@ -36,6 +39,10 @@
 
 .about-us-widget {
   background-size: contain;
+}
+
+#lavender-slider {
+  background: white;
 }
 
 .widget-title {

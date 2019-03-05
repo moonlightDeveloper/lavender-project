@@ -33,7 +33,9 @@ class Contact extends Component {
                 <div className="content">
                  Company:  Emona 29
                  <br/>
-                 Name:  Emil Iliev 
+                 Emil Iliev 
+                 <br/>
+                 Magdalena Ilieva 
                  <br/>
                  gmail: emona.bulgaria@gmail.com
                 </div>

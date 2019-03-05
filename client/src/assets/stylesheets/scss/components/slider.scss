@@ -13,6 +13,7 @@
     @media (max-width:768px) {
       font-size: 2em;
       margin-top: 2.4em;
+      width: 200%;
     }   
   }
   .txt-container{
@@ -85,8 +86,21 @@
     display: block;
     margin-left: auto;
     margin-top: 20%;
-    margin-right: auto;
+    margin-right: auto;    
   }
+
+  @media (max-width:768px) {
+    img{
+      width: 200%;
+      max-width: 76em;
+      left: -15em;     
+      top: 0;
+      position: inherit;
+    }  
+    div.txt-container{
+      top: 30%;
+    } 
+  } 
   img.back-image-oil{
     filter: grayscale(50%) sepia(42%) hue-rotate(-150deg) contrast(1.6)
   }

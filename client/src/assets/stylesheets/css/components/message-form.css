@@ -5,6 +5,18 @@ a, p {
 section#contact {
   padding-top: 0;
 }
+@media (max-width: 768px) {
+  section#contact {
+    min-height: 30em;
+  }
+  section#contact .cont-contactBtn {
+    height: 30em;
+  }
+  section#contact .cont-contactBtn .btn {
+    margin-bottom: 5em;
+    margin-top: 5em;
+  }
+}
 
 .cont-contactInfo {
   float: left;

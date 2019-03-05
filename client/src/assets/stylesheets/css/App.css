@@ -27,6 +27,7 @@ body {
   #main-slider-lavender img {
     font-size: 2em;
     margin-top: 2.4em;
+    width: 200%;
   }
 }
 #main-slider-lavender .txt-container {
@@ -96,6 +97,18 @@ body {
   margin-left: auto;
   margin-top: 20%;
   margin-right: auto;
+}
+@media (max-width: 768px) {
+  #main-slider-contact img {
+    width: 200%;
+    max-width: 76em;
+    left: -15em;
+    top: 0;
+    position: inherit;
+  }
+  #main-slider-contact div.txt-container {
+    top: 30%;
+  }
 }
 #main-slider-contact img.back-image-oil {
   filter: grayscale(50%) sepia(42%) hue-rotate(-150deg) contrast(1.6);
@@ -792,15 +805,14 @@ h2.main-title-header {
 
 .share .content {
   color: black;
-  font-weight: 400;
   letter-spacing: 3px;
   padding: 0.5em;
 }
 
 .fabs {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  height: 56px;
-  width: 56px;
+  height: 48px;
+  width: 48px;
   margin: 0.5em;
   background: #b98f2c;
 }
@@ -808,6 +820,16 @@ h2.main-title-header {
   width: 100%;
   height: 100%;
   padding: 0.8em;
+}
+
+.black-contacts .share .content {
+  color: #a5a1a1;
+}
+@media (max-width: 768px) {
+  .black-contacts .share {
+    text-align: center;
+    width: 100%;
+  }
 }
 
 .navbar-inverse {
@@ -1018,6 +1040,11 @@ h2.main-title-header {
     padding: 5px;
     color: white;
   }
+  #main-slider .carousel img.back-image {
+    width: 200%;
+    left: -16em;
+    position: relative;
+  }
 }
 a, p {
   font-family: "Raleway", sans-serif;
@@ -1025,6 +1052,18 @@ a, p {
 
 section#contact {
   padding-top: 0;
+}
+@media (max-width: 768px) {
+  section#contact {
+    min-height: 30em;
+  }
+  section#contact .cont-contactBtn {
+    height: 30em;
+  }
+  section#contact .cont-contactBtn .btn {
+    margin-bottom: 5em;
+    margin-top: 5em;
+  }
 }
 
 .cont-contactInfo {

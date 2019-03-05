@@ -3,16 +3,25 @@
 $red: #ff4d54;
 $white: #fff;
 
-//body {
-//  background-color: #f6ede5;
-//}
-
 a, p {
   font-family: 'Raleway', sans-serif;
 }
 
 section#contact {
   padding-top: 0;
+
+  @media(max-width: 768px){
+  min-height: 30em;
+
+  .cont-contactBtn{
+    height: 30em;
+    .btn{
+      margin-bottom: 5em;
+      margin-top: 5em;
+    }
+   
+  }
+  }  
 }
 
 @mixin perspective($pixels) {

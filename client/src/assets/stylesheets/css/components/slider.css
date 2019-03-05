@@ -11,6 +11,7 @@
   #main-slider-lavender img {
     font-size: 2em;
     margin-top: 2.4em;
+    width: 200%;
   }
 }
 #main-slider-lavender .txt-container {
@@ -65,7 +66,7 @@
 }
 #main-slider img.back-image, #main-slider-lavender img.back-image, #main-slider-contact img.back-image {
   padding-top: 4.4em;
-  width: 100%;
+  width: 100%;  
 }
 
 #main-slider-contact {
@@ -80,6 +81,18 @@
   margin-left: auto;
   margin-top: 20%;
   margin-right: auto;
+}
+@media (max-width: 768px) {
+  #main-slider-contact img {
+    width: 200%;
+    max-width: 76em;
+    left: -15em;
+    top: 0;
+    position: inherit;
+  }
+  #main-slider-contact div.txt-container {
+    top: 30%;
+  }
 }
 #main-slider-contact img.back-image-oil {
   filter: grayscale(50%) sepia(42%) hue-rotate(-150deg) contrast(1.6);

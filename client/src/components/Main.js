@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from './home/Home';
-import Contact from './Contact';
+import Contact from './contact/Contact';
 import {Switch, Route} from 'react-router';
 import LavenderOil from "./lavenderOil/LavenderOil";
 

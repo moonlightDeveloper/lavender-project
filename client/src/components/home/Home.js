@@ -12,15 +12,21 @@ class Home extends Component {
         return (
             <div id="home" className="main">
                 <HomeHeader/>
+                <div className="natural-img-container-mobile">                                     
+                    <img src="/natural.png" className="natural-img" role="presentation"/>
+                </div>
                 <div id="content-wrapper">
+                <div className="light-prpl">
+                    <div className="container ">
+                        <h2 className="main-title">A Little About Us</h2>
+                    </div>
+                  </div>
                     <section id="about-us" className="white">
                         <div className="container">
                             <div className="gap"></div>
                             <div className="row">
                                 <div className="col-md-12">
-                                    <div className=" gap fade-down section-heading">
-                                        <h2 className="main-title">A Little About Us</h2>
-                                        <hr/>
+                                    <div className=" gap fade-down section-heading">                                      
                                         <div className="testimonial-quote">
                                             <blockquote>
                                                 <p>Bulgaria scores of skilled farmers,

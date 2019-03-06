@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { InstagramLogo, FacebookLogo, GoogleLogo } from '../../src/assets/images/logos.js';
 
 class ContactForm extends Component {
     constructor() {
@@ -22,9 +23,22 @@ class ContactForm extends Component {
                         <div className='back'>
                             <button onClick={() => this.toggleForm()} className="btn btn-white flip">CONTACT US
                             </button>
-                            <div className="container contacts">
+                            <div className="container contacts black-contacts">
                                 <div className="col-xs-12 col-sm-6">
-                                    Mail: mefme.wegber.
+                                <div className="share active">
+                                    <div className="fabs" src="/instagram-logo.svg"><InstagramLogo></InstagramLogo></div>
+                                    <div className="fabs"><FacebookLogo></FacebookLogo></div>
+                                    <div className="fabs"><GoogleLogo></GoogleLogo></div>
+                                    <div className="content">
+                                    Company:  Emona 29
+                                    <br/>
+                                    Emil Iliev 
+                                    <br/> 
+                                    Magdalena Ilieva 
+                                    <br/>
+                                    gmail: emona.bulgaria@gmail.com
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>

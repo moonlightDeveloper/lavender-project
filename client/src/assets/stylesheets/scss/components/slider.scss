@@ -3,7 +3,6 @@
 
 /*  Slider */
 
-
 #main-slider-lavender{
   max-height: 40em;
   overflow: hidden;
@@ -11,7 +10,11 @@
   img{
     width: 100%;
     filter: saturate(1.5);
-   
+    @media (max-width:768px) {
+      font-size: 2em;
+      margin-top: 2.4em;
+      width: 200%;
+    }   
   }
   .txt-container{
     position: absolute;
@@ -33,6 +36,9 @@
           margin-top: 30px;   
           border: 5px solid black;
           
+          @media (max-width:768px) {
+            padding: 5px;
+          }  
           @media screen and (max-width: 1500px) {
             background-color: rgba(0, 0, 0, 0.61);
             color: white;
@@ -49,13 +55,12 @@
   }
 }
 
-#main-slider , #main-slider-lavender {
- //background: greenyellow url("../../../images/lavender-back.jpg");
+#main-slider , #main-slider-lavender, #main-slider-contact {
   position: relative;
   z-index: 5;
   color: $black;
  
-  .carousel-inner {
+
     .carousel-content{
       margin-top: 100px;
 
@@ -66,19 +71,77 @@
       }
     }
     img.back-image {
-      padding-top: 3em;   
+      padding-top: 4.4em;   
       width: 100%;
-    }
-   
-  }
-
+    }  
 }
 
+#main-slider-contact{
+  margin-top: -50%;
+  img{
+    width: 100%;
+    max-width: 80em;
+    left: 0;
+    right: 0;
+    display: block;
+    margin-left: auto;
+    margin-top: 20%;
+    margin-right: auto;    
+  }
 
+  @media (max-width:768px) {
+    img{
+      width: 200%;
+      max-width: 76em;
+      left: -15em;     
+      top: 0;
+      position: inherit;
+    }  
+    div.txt-container{
+      top: 30%;
+    } 
+  } 
+  img.back-image-oil{
+    filter: grayscale(50%) sepia(42%) hue-rotate(-150deg) contrast(1.6)
+  }
+  .txt-container{
+    position: absolute;
+    z-index: 4444; 
+    top: 50%;
+    width: 100%;
+
+    @media (min-width:1800px) {
+      top: 60%;
+    }  
+    .main-container{     
+      h2{
+        padding: 10px 15px;
+ 
+        display: inline-block;
+        text-transform: uppercase;
+       
+          font-size: 44px;
+          color: black;
+          text-transform: uppercase;
+          letter-spacing: -1px;
+          margin-top: 30px;   
+          border: 5px solid black;
+          
+          @media (max-width:768px) {
+            padding: 5px;
+          }  
+         
+      }
+      .sub{
+        margin: 0;
+        font-weight: 900;
+      }
+    }
+  }
+}
 
 .backstretch:before {
   content: '';
-
   min-width: 100%;
   height: 100%;
   position: absolute;
@@ -112,6 +175,9 @@
     }
     @media(max-width: 1000px){
       margin-top: 0;
+    }
+    @media(max-width: 768px){
+      display: none;
     }
   }
 

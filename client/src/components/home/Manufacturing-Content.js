@@ -19,7 +19,7 @@ class ManufacturingContent extends React.Component {
                 <div className="container">
                     <div className="gap"></div>
                     <div className=" gap fade-down section-heading">
-                        <h2 className="main-title">The Process</h2>
+                        <h2 className="prpl-title">The Process</h2>
                         <h4>Great ideas always have a beginning</h4>
                         <hr/>
                     </div>

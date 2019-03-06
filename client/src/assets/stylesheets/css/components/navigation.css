@@ -194,12 +194,22 @@
 }
 
 @media (max-width: 1000px) {
-  #main-slider {
-    min-height: 30em;
-  }
   #main-slider .carousel .boxed {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.65);
+  }
+}
+@media (max-width: 768px) {
+  #main-slider .carousel .boxed, #main-slider .carousel .sub-main-title {
+    background-color: rgba(0, 0, 0, 0.65);
+    margin: 0;
+    padding: 5px;
+    color: white;
+  }
+  #main-slider .carousel img.back-image {
+    width: 200%;
+    left: -16em;
+    position: relative;
   }
 }
 

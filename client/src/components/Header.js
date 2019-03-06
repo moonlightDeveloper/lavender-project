@@ -10,8 +10,8 @@ const Header = () => (
                     <span className="sr-only">Toggle navigation</span>
                     <i className="fa fa-bars"></i>
                 </button>
-                <a className="navbar-brand"><h1><span
-                    className="pe-7s-gleam bounce-in"></span>EMONA</h1></a>
+                <div className="navbar-brand"><img src="/logo.png" className="back-image" role="presentation"/><span
+                    className="pe-7s-gleam bounce-in"> EMONA</span></div>             
             </div>
             <nav className="collapse navbar-collapse">
                 <ul className="nav navbar-nav navbar-right">
